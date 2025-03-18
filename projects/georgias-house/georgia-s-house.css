@@ -1,0 +1,126 @@
+/* 🔹 Vit bakgrund */
+body {
+    margin: 0;
+    font-family: 'DM Mono', monospace;
+    color: #000;
+    background-color: #fff; /* Vit bakgrund */
+    overflow-x: hidden; /* Förhindrar horisontell scroll */
+}
+
+/* 🔥 Navigation - EXAKT SAMMA SOM HUVUDSIDAN */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 10%;
+    background: transparent;
+    z-index: 1000;
+    box-shadow: none; /* Tar bort skuggor */
+    border: none; /* Ingen border */
+}
+
+.menu-item a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #002fa7;
+    font-weight: 500;
+    cursor: pointer;
+    transition: text-decoration 0.2s ease-in-out;
+}
+
+.menu-item a:hover,
+.menu-item a.active-link {
+    text-decoration: underline;
+}
+
+/* 🔥 Centrera navigationen */
+.menu-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* 🔥 Projektsida layout */
+.project-content {
+    padding: 150px 10% 50px 10%;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* 🔥 Projekttitlar */
+.project-content h1 {
+    font-size: 13px;
+    color: #002fa7;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.project-content p {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #333;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* 🔥 Bilder - ALLA bilder på sidan följer samma regler */
+.image-container,
+.image-grid img {
+    width: 100%;
+    max-width: 600px;
+    height: 350px; /* Fast höjd */
+    object-fit: contain; /* 🔥 Bilden behåller sina proportioner utan att beskäras */
+    border-radius: 5px;
+    background-color: #f0f0f0; /* 🔥 Ser till att tomma ytor runt bilden ser snygga ut */
+    display: block;
+    margin: auto;
+}
+
+/* 🔥 Bildgrid för projektbilder */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 bilder per rad */
+    gap: 15px; /* Avstånd mellan bilder */
+    padding: 50px 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🔹 Stilar för bilder i grid */
+.image-grid img {
+    width: 100%;
+    height: 350px; /* Fast höjd */
+    object-fit: contain; /* 🔥 Bilden behåller sina proportioner utan att beskäras */
+    border-radius: 0px; /* Små rundade hörn */
+    background-color: #ffffff;
+}
+
+/* 🌟 Mobilanpassning */
+@media screen and (max-width: 768px) {
+    .menu {
+        padding: 15px 5%;
+    }
+
+    .project-content {
+        padding: 100px 5% 50px 5%;
+    }
+
+    .project-content h1 {
+        font-size: 20px;
+    }
+
+    .project-content p {
+        font-size: 14px;
+    }
+
+    /* 🔥 Bildgrid på mobil - en bild per rad */
+    .image-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
